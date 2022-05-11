@@ -1,0 +1,95 @@
+<html>
+    <head>
+        JavaScript Tutorial
+    </head>
+    <body>
+        <p id="demo"></p>
+    </body>
+    <script>
+        
+        // Create an array
+        let cars = ["bmw", "volvo", "honda", "tesla"]
+        document.getElementById("demo").innerHTML = cars
+        
+        // Access an array item
+        let bmw = cars[0]
+        document.getElementById("demo").innerHTML = bmw
+
+        // Array length property
+        let len = cars.length
+        document.getElementById("demo").innerHTML = len
+
+        // Access last array item
+        let last = cars[cars.length-1]
+        document.getElementById("demo").innerHTML = last
+
+        // Loop over an array item
+        cars.forEach((item,index,array) => {
+            console.log(item, index)
+        }) 
+
+        // Array Methods
+        
+        // toString() : Convert an array into string
+        document.getElementById("demo").innerHTML = cars.toString()
+
+        // pop() : Remove the last element from an array
+        let last1 = cars.pop()
+        document.getElementById("demo").innerHTML = last1
+        let last2 = cars[cars.length-1]
+        console.log(last2)
+        
+        // push() : Add a new element at the end of an array
+        cars.push("mercedes")
+        document.getElementById("demo").innerHTML = cars
+
+        // shift() : Remove the first element from an array
+        let first1 = cars.shift()
+        document.getElementById("demo").innerHTML = first1
+
+        // unshift() : Add an element at the beginning of an array
+        cars.unshift("Audi")
+        document.getElementById("demo").innerHTML = cars
+        
+        // concat() : Create a new array by merging existing arrays
+        let motorbikes = ["vespa", "suzuki", "victory", "norton"]
+        let vehicles = cars.concat(motorbikes)
+        document.getElementById("demo").innerHTML = vehicles
+
+        // sort() : Sort an array in ascending order
+        vehicles.sort()
+        document.getElementById("demo").innerHTML = vehicles
+
+        // reverse() : Reverse the elements of an array (descending order)
+        vehicles.reverse()
+        document.getElementById("demo").innerHTML = vehicles
+
+        /* Array.map() : map() method creates a new array from an existing one
+        and performs a function on each array element */
+        let num1 = [2, 4, 3, 7, 8, 9]
+        let num2 = num1.map(multiply)
+        function multiply(value) {
+            return value * 2
+        }
+        document.getElementById("demo").innerHTML = num2
+
+        /* Array.filter() : filter() method takes each element in an array and it
+        applies a conditional statement against it
+        */
+       let num3 = num1.filter(comp)
+       function comp(value) {
+           return value > 4
+       }
+       document.getElementById("demo").innerHTML = num3
+
+       /* Array.reduce() : reduce() method reduces an array of values down to
+       just one value using a function
+       */
+      let num4 = num1.reduce(sum)
+      function sum(value, total) {
+          return value + total
+      }
+      document.getElementById("demo").innerHTML = num4
+
+    </script>
+</html>
