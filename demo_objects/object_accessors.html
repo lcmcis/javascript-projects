@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>JavaScript Objects</title>
+    </head>
+    <body>
+        <h1>JavaScript Object Accessors</h1>
+        <p id="demo"></p>
+    </body>
+    
+    <script>
+        let car1 = {
+            model: "Acura MDX",
+            color: "Red",
+            fuel_type: "Gasoline",
+            get fuel() {
+                return this.fuel_type
+            }
+        }
+       
+        document.getElementById("demo").innerHTML = car1.fuel
+        
+    </script>
+
+    <script>
+        let car2 = {
+            model: "Audi A4",
+            color: "Bright Red",
+            fuel_type: "",
+            set fuel(fuel) {
+                this.fuel_type = fuel
+            }
+        }
+        car2.fuel = "Petrol"
+        document.getElementById("demo").innerHTML = car2.fuel_type
+        
+    </script>
+</html>
