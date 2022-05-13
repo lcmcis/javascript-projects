@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>JavaScript Closures</title>
+        <p id="demo"></p>
+    </head>
+    <body>
+        <h1>Closures</h1>
+        <script>
+            // Example of variable scope
+            // Here, x is the global variable
+            let x = 5
+            function myFunction() {
+                // Here, y is the local variable
+                let y = 6
+                document.write( x + y )
+            }
+            myFunction()   
+        </script>
+
+        <script>
+            let a = 5
+            function firstFunc() {
+                let b = 10
+                function secondFunc() {
+                    let c = 10 + a + b
+                    return c
+                }
+                return secondFunc()
+            }
+            let sum = firstFunc()
+            document.write("The sum is " + sum)
+        </script>
+        
+    </body>
+</html>
