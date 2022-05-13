@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>JavaScript Functions</title>
+        <p id="demo"></p>
+    </head>
+    <body>
+        <script>
+            // Function declaration
+            function my_function(val) {
+                document.getElementById("demo").innerHTML = val * val
+            }
+            my_function(6)
+        </script>
+        
+        <script>
+            // Function expression
+            let x = function() {
+                alert("Hi!")
+            }
+            document.getElementById("demo").innerHTML = x()
+        </script>
+
+        <script>
+            // Function constructor
+            let myFunction = new Function("a", "b", "return a + b")
+            let y = myFunction(4, 5)
+            document.getElementById("demo").innerHTML = "The sum is " + y
+        </script>
+
+        <script>
+            // Self-Invoking Functions
+            (function() {
+                alert("Hi! Welcome!")
+            })()
+        </script>
+
+        <script>
+            // Functions as values
+            function product(a, b) {
+                return a * b
+            }
+            let z = product(5, 6) * 2
+            document.getElementById("demo").innerHTML = "The product is " + z
+        </script>
+
+        <script>
+            // Functions as objects
+            let body = "return Math.PI * rad * rad"
+            let circle = new Function("rad", body)
+            alert(circle(4))
+        </script>
+
+        <script>
+            // Arrow Functions
+            const myFunc = (a, b, c) => {
+                return a * b * c
+            }
+            let i = myFunc(3,2,6)
+            document.getElementById("demo").innerHTML = "The product of the three digits is " + i
+        </script>
+
+        <script>
+            // Generator Functions
+            function * generatorFunc() {
+                yield 1
+                yield 2
+                return 3
+            }
+            let generator = generatorFunc()
+            let one = generator . next()
+            let two = generator . next()
+            let three = generator . next()
+            alert(JSON.stringify(one))
+            alert(JSON.stringify(two))
+            alert(JSON.stringify(three))
+        </script>
+    </body>
+</html>
