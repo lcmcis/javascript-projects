@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>JavaScript this keyword</title>
+    </head>
+    <body>
+        <h1>this keyword</h1>
+        
+        <!-- <script>
+
+            // If the function being referenced is a regualr function, "this" references the global object
+
+            var value = 50
+
+            function myFunc() {
+                let value = 100
+                alert("value: " + value)
+                alert("This value: " + this.value)
+            }
+            myFunc()
+
+        </script> -->
+
+        <!-- <script>
+
+            // If the function that is being referenced is a method in an object, this references the object itself
+
+            const random = {
+                name: "John Doe",
+                info(){
+                    console.log("Hi! My name is " + this.name)
+                }
+            }
+            random.info()
+
+        </script> -->
+
+        <script>
+
+            // Another example
+
+            const random = {
+                name: "Tutorial",
+                video: ["JavaScript", "this", "keyword"],
+                info() {
+                    this.video.forEach(function(tag) {
+                        console.log(this.name, tag)
+                    }, this)
+                }
+            }
+            random.info()
+            
+        </script>
+
+    </body>
+</html>
